@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 3px;
+            width: max-content;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p class="single">This is a click Event</p>
+    <p class="double">This is a double-click Event</p>
+
+    <script>
+        // Ensure the script runs after the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", function () {
+            let single = document.querySelector(".single");
+            let double = document.querySelector(".double");
+
+            single.addEventListener('click', function () {
+                single.style.backgroundColor = 'skyblue';
+            });
+
+            // Fixed the incorrect event name from 'double-click' to 'dblclick'
+            double.addEventListener('dblclick', function () {
+                double.style.backgroundColor = 'brown';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle in Canvas using jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <canvas id="triangleCanvas" width="300" height="300" style="border:1px solid black;"></canvas>
+    <script>
+        $(document).ready(function() {
+            var canvas = document.getElementById("triangleCanvas");
+            var ctx = canvas.getContext("2d");
+
+            // Define triangle points (matching your image)
+            let p1 = { x: 150, y: 30 };  // Top point
+            let p2 = { x: 60, y: 200 };  // Bottom-left
+            let p3 = { x: 240, y: 200 }; // Bottom-right
+
+            // Draw the triangle
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.lineTo(p3.x, p3.y);
+            ctx.closePath();
+
+            // Fill and stroke
+            ctx.fillStyle = "red"; // Fill color
+            ctx.fill();
+            ctx.strokeStyle = "black"; // Border color
+            ctx.lineWidth = 3;
+            ctx.stroke();
+        });
+    </script>
+</body>
+</html>
