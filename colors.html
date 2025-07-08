@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pastel Theme Color Palette</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #444;
+    }
+
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .color-box {
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      overflow: hidden;
+      text-align: center;
+      background-color: #fefefe;
+      padding-bottom: 15px;
+    }
+
+    .color {
+      height: 100px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .label {
+      padding: 10px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .desc {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .example {
+      margin-top: 8px;
+    }
+
+    .btn-example {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .text-example {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .box-example {
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    /* Colors */
+    .primary    { background-color: #FFB6B9; }
+    .secondary  { background-color: #A0E7E5; }
+    .background { background-color: #FFF1E6; }
+    .accent     { background-color: #FFDAC1; }
+    .lilac      { background-color: #DCD6F7; }
+    .text-dark  { background-color: #444444; color: white; }
+    .text-light { background-color: #888888; color: white; }
+  </style>
+</head>
+<body>
+  <h1>Pastel Color Palette – UI Design Preview</h1>
+  <div class="palette">
+    <!-- Primary -->
+    <div class="color-box">
+      <div class="color primary"></div>
+      <div class="label">Primary - #FFB6B9</div>
+      <div class="desc">Used for buttons and CTA highlights</div>
+      <div class="example">
+        <button class="btn-example" style="background-color:#FFB6B9; color:#fff;">Shop Now</button>
+      </div>
+    </div>
+
+    <!-- Secondary -->
+    <div class="color-box">
+      <div class="color secondary"></div>
+      <div class="label">Secondary - #A0E7E5</div>
+      <div class="desc">Used for accents, hover effects, icons</div>
+      <div class="example">
+        <button class="btn-example" style="background-color:#A0E7E5; color:#444;">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Background -->
+    <div class="color-box">
+      <div class="color background"></div>
+      <div class="label">Background - #FFF1E6</div>
+      <div class="desc">Used for page or section backgrounds</div>
+      <div class="example">
+        <div class="box-example" style="background-color:#FFF1E6;">Soft Section Background</div>
+      </div>
+    </div>
+
+    <!-- Accent -->
+    <div class="color-box">
+      <div class="color accent"></div>
+      <div class="label">Accent - #FFDAC1</div>
+      <div class="desc">Used for labels, steps, badges</div>
+      <div class="example">
+        <div class="box-example" style="background-color:#FFDAC1;">Step 1: Choose Product</div>
+      </div>
+    </div>
+
+    <!-- Lilac -->
+    <div class="color-box">
+      <div class="color lilac"></div>
+      <div class="label">Pastel Lilac - #DCD6F7</div>
+      <div class="desc">Used in gift sections or footers</div>
+      <div class="example">
+        <div class="box-example" style="background-color:#DCD6F7;">Gift Gallery</div>
+      </div>
+    </div>
+
+    <!-- Text Dark -->
+    <div class="color-box">
+      <div class="color text-dark"></div>
+      <div class="label">Text (Dark) - #444444</div>
+      <div class="desc">Used for headings and main content</div>
+      <div class="example">
+        <div class="text-example" style="color:#444444;">Welcome to Our Store</div>
+      </div>
+    </div>
+
+    <!-- Text Light -->
+    <div class="color-box">
+      <div class="color text-light"></div>
+      <div class="label">Text (Light) - #888888</div>
+      <div class="desc">Used for subheadings and footer text</div>
+      <div class="example">
+        <div class="text-example" style="color:#888888;">Explore our custom gift section</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
