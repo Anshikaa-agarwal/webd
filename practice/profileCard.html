@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Profile Card</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+            text-align: center;
+        }
+
+        .user-img img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .user-content h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 0.4rem;
+        }
+
+        .desc {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .btn {
+            margin-top: 1rem;
+            padding: 10px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+            background-color: #3686ff;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #2d81ff;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-content">
+            <div class="user-img">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALYAAACUCAMAAAAJSiMLAAAARVBMVEX6+vqPj4////+GhobIyMiLi4uBgYH19fXx8fHk5OTf39+bm5vu7u59fX20tLSnp6fT09O8vLyurq6VlZXZ2dnCwsKhoaGgB9MrAAADwUlEQVR4nO2c23akIBBFsRARUfH+/586aDo9mUl3BCJQrlX7Jf24V6XkepQxgiAIgiAIgiAIgkACHOS28MHa1q1qLKqV7B7u1rIpe7PNc1HM82b6UjH04gDtaH2FEMXB/mPWq0Rdclto0z2Ev8K7CXHJoZn4C+mj6rxXOL2BrQV/LX1UfC4xFhxq86bSz4pPEp03NOLEei84tkaB5l1X/1PvApc3NIWDtfVGVW9Qs5O19d5aPN6tdrS2/W1kbttPYPph4PvmPSIpNyyVu7X1RtLeMPtYF0Kj0IbRubEf3iUCb/B4Hh/aG4KnEkpPa8uQv9zybCnyotx9/nIrj8HvicptDWuANs/eJbD5t7btktzaLKRHijmzNCivGfKTKvOGwXNif2pnnuChDGqSKvMzCWOQdu6hBPqAgcRqZ16W3FU7sElya9/0kRzuOQC2Ydp1VmsWOLkXua3Bd2+zI6bsS6mQZzL3bLOvpUIG7jazNWOn58PfEVP+TVnAyC2y98hx4OBrvWUf/thdj3cYk57Vzr0je+A5wXcNimJbb+NzUJx/1/5J7T5VCjzH8ow1rmfFyC5vBsc24Vga+wNYnC74BKZa78ByflkmNK5a74DaThqFG0SXe09A9t1P1t2KMSrA9oLrdxfvojA1Tmm2ZzOG6VU4gxfTgrTUH4Bcxrn6OqoIXum1wRfJ+A9gslk177rK0nVcl0qirvSTIwDYKkvN7hcGvJkwQdwcuID0zrIZyl8yqLRxY2DLXFX811SVbtJNRaBM0Kn2qyUWn1LtHGBwjc+5wBPtHdwClu4InmJJC/Wl0gcp1of95dYifjQQnI9EPLR19E1m4EXkiXf0A285Xd/aBR8jW7M6JGR0RvxbEe+7Ayft6OeZpJ1WO0ZvR9e+6SMZEGl10I4eepVhKaOfiT9us5BM66l29JtKGCJUu1iia0dYShU6fjA6wjMppujWDNbruyTBJTyoy62LJLsyc7F0mutsqK86bfjUTnPiEBgQfWudKl7ikQw4J93LQ9dOOdGnmr/eAW82vSFp3Ouy9k6diJ4uGU7Sv/PZX+DN18TSe3+7vWz9HjHniDHCon/V4NzkycRAO55/SeBtqcWaK/IATG2BHd5tOeNHYDvFu8Xtv8hKZ345gS397HO9ILjuFwS38bZVSsPdzEUlpqFFktMAkO2gq+pndcE7boYa12d4AKAtJz1/fC/o4PlD7N880rbMKKMaR/ilGcqx743ZHhjT92M5qBp3vOTDTtZt3VrsH0mBGIIgCIIgCIIgCIII5w+WUi5WZHi8BgAAAABJRU5ErkJggg=="
+                    alt="">
+            </div>
+            <div class="user-content">
+                <h3>Anshika</h3>
+                <p class="desc">Hi, my name is Anshika Agarwal. I am a 20 year old girl. I am currently pursuing my
+                    bachelors in technology in CSE from JIIT.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit ex voluptatum dolorum, odit ipsum
+                    debitis iusto ratione pariatur molestias fugit earum delectus aliquam officiis quidem libero error
+                    repellat ducimus reiciendis.
+                </p>
+                <button onclick="handleToggle()" class="btn">Follow</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.querySelector('.btn');
+
+        const handleToggle = () => {
+            if (btn.innerHTML === 'Follow') {
+                btn.innerHTML = 'Unfollow';
+                btn.style.backgroundColor = 'gray';
+            }
+            else {
+                btn.innerHTML = 'Follow'
+                btn.style.backgroundColor = 'rgb(54, 134, 255)';
+            }
+        }
+    </script>
+</body>
+
+</html>
