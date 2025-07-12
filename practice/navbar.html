@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Navbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            padding: 15px 60px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .menu-btn {
+            display: none;
+            /* Placeholder if used later for mobile */
+        }
+
+        .nav-links ul {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links ul li a,
+        .drop-btn {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links ul li a:hover,
+        .drop-btn:hover {
+            color: #007BFF;
+        }
+
+        .drop-btn {
+            border: none;
+            background: none;
+        }
+
+        .dropdown-content {
+            display: none;
+            flex-direction: column;
+            width: 140px;
+            position: absolute;
+            background-color: #ffffff;
+            box-shadow: 0 0px 6px rgba(0, 0, 0, 0.141);
+            top: 52px;
+            border-radius: 6px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            padding: 10px 10px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgb(240, 240, 240);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">LOGO</div>
+        <div class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li>
+                    <div class="dropdown">
+                        <button class="drop-btn">Dropdown &#9662;</button>
+                        <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        dropdown = document.querySelector('.dropdown');
+        dropdownContent = dropdown.querySelector('.dropdown-content');
+
+        dropdown.addEventListener('mouseover', (e) => {
+            e.stopPropagation();
+            dropdownContent.style.display = 'flex'
+        })
+
+        dropdown.addEventListener('mouseout', () => {
+            dropdownContent.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
