@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .clicked {
+            background-color: green !important;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="para"></p>
+    <img src="https://picsum.photos/id/1015/400/300" alt="alt-text">
+    <a href="https://picsum.photos/id/1016/400/300">image link</a>
+    <br>
+    <button class="btn">Click me!</button>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+
+    <script>
+        const pTag = document.querySelector('.para');
+        const image = document.getElementsByTagName('img')[0];
+        const link = document.querySelector('a');
+        const button = document.querySelector('.btn');
+        const inputs = document.querySelectorAll('input');
+
+        pTag.innerHTML = `<strong>bold</strong>`;
+        image.setAttribute('src', "https://picsum.photos/id/1016/400/300")
+        console.log(link.getAttribute('href'));
+        button.addEventListener('click', () => {
+            if(button.classList.contains('clicked')) {
+                button.textContent = "Click me";
+                button.classList.remove('clicked');
+            }
+            else {
+                button.textContent = "Clicked!";
+                button.classList.add('clicked');
+            }
+        })
+        inputs.forEach((inp) => {
+            inp.setAttribute('data-value', 'true');
+
+            if(inp.value.trim === "") {
+                inp.setAttribute('data-value', 'false');
+                input.style.border = '2px solid red';
+            }
+        })
+
+    </script>
+</body>
+
+</html>
