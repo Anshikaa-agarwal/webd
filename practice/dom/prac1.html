@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .active {
+            background-color: lightgreen;
+            font-weight: bold;
+        }
+        .odd-bg{
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="item">Apple</li>
+        <li class="item">Banana</li>
+        <li class="item">Cherry</li>
+    </ul>
+
+    <p id="title"></p>
+
+    <div class="highlight">Learn HTML</div>
+    <div class="highlight">Master JS</div>
+    <div class="highlight">Explore CSS</div>
+
+
+    <script>
+        const totalItems = document.querySelectorAll('.item');
+        const pTitle = document.getElementById('title');
+        const highlights = document.querySelectorAll('.highlight');
+        const tags = document.getElementsByTagName('div');
+        let sum = 0;
+
+        pTitle.innerHTML = "welcome"
+
+        console.log(totalItems.length)
+
+        totalItems.forEach((item) => {
+            console.log(item.innerHTML.toUpperCase());
+            item.addEventListener('click', (e) => {
+                totalItems.forEach((el1) => el1.classList.remove('active'));
+
+                item.classList.toggle('active')
+            })
+        })
+
+        const lastItem = totalItems[totalItems.length - 1];
+        lastItem.style.color = "blue"
+
+        highlights.forEach((highlight) => {
+            let text = highlight.textContent;
+            if (text.includes("JS")) {
+                highlight.style.border = "1px solid black";
+                highlight.style.padding = "5px"
+            }
+        })
+
+        for(let i=0; i<highlights.length; i++) {
+            if(i%2 == 1) {
+                highlights[i].addEventListener('click', () => {
+                    highlights[i].classList.toggle('odd-bg');
+                })
+            }
+        }
+
+        Array.from(tags).forEach((tag) => {
+            sum += tag.innerHTML.length
+        })
+
+        console.log(sum)
+
+    </script>
+
+</body>
+
+</html>
