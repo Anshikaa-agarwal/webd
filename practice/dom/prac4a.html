@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Navigation Example</title>
+</head>
+<body>
+  <div class="container">
+    Hello
+    <ul class="list">
+      <li>Apple</li>
+      <li class="active">Banana</li>
+      <li>Cherry</li>
+    </ul>
+  </div>
+
+  <script>
+    const container = document.querySelector('.container');
+    const ul = document.querySelector('.list');
+    const activeItem = document.querySelector('.active');
+
+    // 1. children vs childNodes
+    console.log('ul.children:', ul.children);           // Only <li> elements
+    console.log('ul.childNodes:', ul.childNodes);       // Includes text nodes (whitespace)
+
+    // 2. firstChild vs firstElementChild
+    console.log('ul.firstChild:', ul.firstChild);             // Might be a text node (e.g., newline)
+    console.log('ul.firstElementChild:', ul.firstElementChild); // First <li>
+
+    // 3. parentNode vs parentElement
+    console.log('activeItem.parentNode:', activeItem.parentNode);       // Should be <ul>
+    console.log('activeItem.parentElement:', activeItem.parentElement); // Also <ul>
+
+    // 4. nextElementSibling and previousElementSibling
+    console.log('activeItem.nextElementSibling:', activeItem.nextElementSibling); // Cherry
+    console.log('activeItem.previousElementSibling:', activeItem.previousElementSibling.textContent); // Apple
+
+    // 5. Checking for text nodes in container
+    console.log('container.childNodes:', container.childNodes); // Includes "Hello" as a text node
+    console.log('container.children:', container.children);     // Only includes <ul>
+  </script>
+</body>
+</html>
