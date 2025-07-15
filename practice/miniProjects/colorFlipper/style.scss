@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+$font-color: #2c937f;
+$font-color-dark: #277b6b;
+$btn-color: #ddfff8;
+$btn-color-dark: #c7e8e1;
+
+@mixin flexcol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    @include flexcol();
+}
+
+.color {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.button{
+    padding: 16px 18px;
+    background-color: $btn-color;
+    border: none;
+    color: $font-color;
+    font-size: 2.5rem;
+    font-weight: bold;
+    border-radius: 100px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.244);
+    transition: all 0.3s ease;
+
+    &:active{
+        transform: scale(0.95);
+    }
+
+    &:hover{
+        color: $font-color-dark;
+        background-color: $btn-color-dark;
+        cursor: pointer;
+    }
+}
