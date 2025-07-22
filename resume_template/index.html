@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Calibri", sans-serif;
+            padding: 40px 100px;
+            background-color: white;
+            color: #000;
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        .title,
+        .achievement__title,
+        .projects__title,
+        .skills__title,
+        .experience__title,
+        .education__title {
+            width: 100%;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 6px;
+            border-bottom: 2px solid black;
+            display: inline-block;
+        }
+
+        .resume__header {
+            text-align: center;
+        }
+
+        .resume__name {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .resume__contact {
+            margin-top: 5px;
+            font-size: 17px;
+        }
+
+        .resume__contact-item {
+            margin: 4px 0;
+        }
+
+        .resume__contact-link:hover {
+            text-decoration: underline;
+        }
+
+        .education__title {
+            margin-bottom: 10px;
+        }
+
+        .education__entry {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .education__details {
+            max-width: 80%;
+        }
+
+        .education__details .education__institution {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .education__details .education__subtext {
+            font-size: 17px;
+        }
+
+        .education__details .education__degree {
+            font-style: italic;
+            font-size: 17px;
+            margin-top: 2px;
+        }
+
+        .education__date {
+            font-size: 17px;
+            white-space: nowrap;
+            margin-left: 10px;
+        }
+
+        .experience__title {
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .experience__header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .experience__role {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .experience__duration {
+            font-size: 18px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .experience__points {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        .experience__point {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .experience__point strong {
+            font-weight: bold;
+        }
+
+        .skills {
+            font-size: 17px;
+        }
+
+        .skills__title {
+            margin-top: 7px;
+        }
+
+        .skills__group {
+            margin-top: 10px;
+        }
+
+        .skills__label {
+            display: inline;
+            font-weight: bold;
+        }
+
+        .skills__list {
+            display: inline;
+            margin-left: 5px;
+        }
+
+        .projects__title {
+            margin: 15px 0 10px 0;
+        }
+
+        .projects__item {
+            padding-bottom: 15px;
+        }
+
+        .projects__name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .projects__description {
+            font-size: 17px;
+            list-style: disc;
+            padding-left: 20px;
+            margin-top: 8px;
+            line-height: 1.6;
+        }
+
+        .achievement__title {
+            margin: 0;
+        }
+
+        .achievement__item {
+            margin-top: 10px;
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        .achievement__link {
+            color: #4b7c8c;
+            text-decoration: none;
+        }
+
+        .achievement__link:hover {
+            text-decoration: underline;
+        }
+
+        .achievement em {
+            font-style: italic;
+        }
+
+        .achievement strong {
+            font-weight: bold;
+        }
+
+        /*# sourceMappingURL=style.css.map */
+    </style>
+</head>
+
+<body>
+
+    <!-- Download Button -->
+    <button id="downloadBtn" style="margin-bottom: 20px; padding: 8px 16px; font-size: 16px;">
+        Download Resume as PDF
+    </button>
+
+    <div id="resume-content">
+        <!-- RESUME HEADER -->
+        <header class="resume__header">
+            <h1 class="resume__name">ATHARVA ROTKAR</h1>
+            <div class="resume__contact">
+                <span class="resume__contact-item">(857) 396-4898</span>
+                <span>|</span>
+                <span class="resume__contact-item">rotkar.a@northeastern.edu</span>
+                <span>|</span>
+                <span class="resume__contact-item">
+                    <a class="resume__contact-link" href="#">LinkedIn</a>
+                </span>
+            </div>
+        </header>
+
+        <!-- EDUCATION SECTION -->
+        <section class="education">
+            <h2 class="education__title title">EDUCATION</h2>
+
+            <div class="education__entry">
+                <div class="education__details">
+                    <p class="education__institution">
+                        <strong>NORTHEASTERN UNIVERSITY</strong>, Boston, MA
+                    </p>
+                    <p class="education__subtext">D'Amore-McKim School of Business</p>
+                    <p class="education__degree">
+                        <em>Master of Science Business Analytics</em>
+                    </p>
+                </div>
+                <div class="education__date">December 2024</div>
+            </div>
+
+            <div class="education__entry">
+                <div class="education__details">
+                    <p class="education__institution">
+                        <strong>CHHATTISGARH SWAMI VIVEKANAND TECHNICAL UNIVERSITY</strong>, India
+                    </p>
+                    <p class="education__degree">
+                        <em>Bachelor of Technology (Computer Science and Engineering)</em>
+                    </p>
+                </div>
+                <div class="education__date">August 2023</div>
+            </div>
+        </section>
+
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <section class="experience">
+            <h2 class="experience__title title">PROFESSIONAL EXPERIENCE</h2>
+
+            <div class="experience__item">
+                <div class="experience__header">
+                    <p class="experience__role">
+                        <strong>Lead AI Engineer</strong> | ThoughtJumper Inc. | Remote (USA)
+                    </p>
+                    <p class="experience__duration"><strong>August 2024 - Present</strong></p>
+                </div>
+
+                <ul class="experience__points">
+                    <li class="experience__point">
+                        Leading the design and deployment of an AI-driven career intelligence platform,
+                        <strong>ProfileIQ</strong>, providing real-time job insights, skill visualizations, and
+                        personalized
+                        career paths using generative AI and advanced analytics.
+                    </li>
+                    <li class="experience__point">
+                        Implementing <strong>GraphRAG and Neo4j-based Knowledge Graphs</strong> to map skills, job
+                        roles,
+                        and experience pathways for users, enhancing recommendation accuracy and reducing skill-gap
+                        analysis
+                        time by 40%.
+                    </li>
+                    <li class="experience__point">
+                        Developed AI agents simulating <strong>Data Scientist</strong> and <strong>AI Engineer
+                            personas</strong>, leveraging optimized <strong>RAG pipelines</strong> for collaborative
+                        reasoning across 25+ curated research papers.
+                    </li>
+                    <li class="experience__point">
+                        Built scalable microservices and APIs for the AI Interviewer module, integrating <strong>speech
+                            analysis, sentiment detection, and body language evaluation</strong> for comprehensive
+                        candidate
+                        feedback.
+                    </li>
+                    <li class="experience__point">
+                        Deployed multimodal LLM workflows with <strong>OpenAI, LangChain, Gemini API</strong>, and
+                        <strong>Bedrock</strong> to support intelligent document parsing, skill inference, and
+                        personalized
+                        roadmap generation at scale.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="experience__item">
+                <div class="experience__header">
+                    <p class="experience__role">
+                        <strong>DASH GenAI Special Projects Lead</strong> | DMSB AI Strategic Hub (DASH) | Boston, MA
+                    </p>
+                    <p class="experience__duration"><strong>August 2024 - Present</strong></p>
+                </div>
+                <ul class="experience__points">
+                    <li class="experience__point">
+                        Launched EssayBot, a bulk grading tool using Retrieval-Augmented Generation (RAG) and OpenAI
+                        Assistant, enabling grading of 150 essays in under 30 minutes with tailored feedback aligned to
+                        course materials.
+                    </li>
+                    <li class="experience__point">
+                        Built asynchronous processing in Python to handle concurrent grading requests, enhancing
+                        efficiency
+                        by 85% and allowing real-time feedback at scale.
+                    </li>
+                    <li class="experience__point">
+                        Created PresBot, an AI-powered presentation tool that refines cadence, pitch, and engagement in
+                        the
+                        user’s voice using Gemini 1.5 Pro and Eleven Labs for personalized voice cloning.
+                    </li>
+                    <li class="experience__point">
+                        Reduced manual review and presentation preparation time for faculty and students with PresBot’s
+                        automated analysis and enhancement, leading to improved presentation quality and consistency.
+                    </li>
+                    <li class="experience__point">
+                        Deployed AI platforms on AWS S3 and Bedrock for scalable performance, integrating AI pipelines
+                        to
+                        support high-demand periods and optimize resource use across applications.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="experience__item">
+                <div class="experience__header">
+                    <p class="experience__role">
+                        <strong>Research Assistant</strong> | Northeastern University | Boston, MA
+                    </p>
+                    <p class="experience__duration"><strong>November 2023 - August 2024</strong></p>
+                </div>
+                <ul class="experience__points">
+                    <li class="experience__point">
+                        Explored advanced generative AI tools for image, voice, and avatar creation, pushing innovative
+                        applications.
+                    </li>
+                    <li class="experience__point">
+                        Engineered a lifelike digital persona replicating a Northeastern University professor,
+                        showcasing
+                        realistic AI-driven speech and mannerisms.
+                    </li>
+                    <li class="experience__point">
+                        Led “Data Forum” workshop for 150 attendees & executives, demonstrating generative AI’s
+                        corporate
+                        applications.
+                    </li>
+                    <li class="experience__point">
+                        Contributed by simplifying research papers and complex generative AI concepts for a diverse
+                        audience.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="experience__item">
+                <div class="experience__header">
+                    <p class="experience__role">
+                        <strong>Data Analyst and Science Advocate</strong> | Georgia Tech | Atlanta, GA
+                    </p>
+                    <p class="experience__duration"><strong>May 2024 - Aug 2024</strong></p>
+                </div>
+                <ul class="experience__points">
+                    <li class="experience__point">
+                        Achieved proficiency in ArcGIS within 2 weeks; created 35+ web maps using various templates.
+                    </li>
+                    <li class="experience__point">
+                        Configured 25+ instant apps to display specific regions, utilizing advanced settings and Express
+                        Mode options.
+                    </li>
+                    <li class="experience__point">
+                        Developed 10+ StoryMaps for dynamic data visualization, including comparative analysis (income
+                        vs.
+                        insurance, race vs. asthma).
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="skills">
+            <h2 class="skills__title title">SKILLS</h2>
+
+            <div class="skills__group">
+                <p class="skills__label">Technical:</p>
+                <p class="skills__list">Python, LangChain, OpenAI, C++, Django, MySQL, MongoDB, Flask, ReactJS, HTML,
+                    CSS,
+                    JavaScript, Statistics.</p>
+            </div>
+
+            <div class="skills__group">
+                <p class="skills__label">Tools:</p>
+                <p class="skills__list">Git & GitHub, ServiceNow, Jira, VSCode, Jupyter, Postman, Microsoft Office (MS
+                    Word,
+                    Excel, PowerPoint), ArcGIS.</p>
+            </div>
+
+            <div class="skills__group">
+                <p class="skills__label">Soft Skills:</p>
+                <p class="skills__list">Problem Solving, Team Player, Result-Oriented, Punctual, Disciplined, Meticulous
+                    Time Management.</p>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="projects">
+            <h2 class="projects__title title">PROJECTS</h2>
+
+            <div class="projects__item">
+                <h3 class="projects__name">
+                    AI-Driven Order Management with MongoDB, ERP, RPA & LangChain Agents
+                </h3>
+                <ul class="projects__description">
+                    <li>Developed an end-to-end order management system integrating MongoDB for real-time data storage
+                        and
+                        retrieval.</li>
+                    <li>Leveraged LangChain ReAct Agents in Python to automate order creation, validation, and approval
+                        flows within an ERP environment.</li>
+                    <li>Implemented RPA (Robotic Process Automation) bots to handle repetitive tasks, such as updating
+                        order
+                        records in legacy systems and extracting data from purchase orders.</li>
+                    <li>Achieved a 40% reduction in manual errors by automating data entry, and improved order
+                        processing
+                        speed by 60% through parallelized RPA pipelines.</li>
+                </ul>
+            </div>
+
+            <div class="projects__item">
+                <h3 class="projects__name">
+                    Automatic Shipment & Invoice Tracking with LangChain AI Agents (ReAct) & RPA
+                </h3>
+                <ul class="projects__description">
+                    <li>Engineered an intelligent tracking solution using LangChain ReAct Agents to monitor shipment
+                        progress and invoice statuses across multiple carriers.</li>
+                    <li>Created an automated pipeline that seamlessly retrieves shipping updates via carrier APIs
+                        (FedEx,
+                        UPS) and RPA scripts, triggering invoice generation and payment reminders in real time.</li>
+                    <li>Configured MongoDB as a single source of truth for shipment histories, invoice records, and
+                        real-time notifications, ensuring traceability and audit compliance.</li>
+                    <li>Reduced invoice processing time by 65% and enhanced on-time delivery rates by 15% through
+                        proactive
+                        alerts and system-driven follow-ups.</li>
+                </ul>
+            </div>
+
+            <div class="projects__item">
+                <h3 class="projects__name">FeelixBot</h3>
+                <ul class="projects__description">
+                    <li>Researched dementia and memory loss, identifying key factors in memory decline.</li>
+                    <li>Developed FeelixBot with OpenAI, Anthropic, and ElevenLabs APIs, creating an interactive AI
+                        assistant backend.</li>
+                    <li>Built a dynamic frontend in JavaScript and React 3D, featuring a human-like avatar for natural
+                        interaction.</li>
+                    <li>Designed and implemented animations, including hand and head movements, in Blender and
+                        integrated in
+                        React 3D.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+        <section class="achievement">
+            <h2 class="achievement__title title">ACHIEVEMENTS</h2>
+
+            <div class="achievement__item">
+                <p>
+                    <strong>Second Runner Up</strong> –
+                    <a class="achievement__link" href="#">Papers2Products</a> Hackathon –
+                    <em>Northeastern Data Initiative & MathWorks</em> Engineered a companion AI bot with ElevenLabs and
+                    Anthropic’s Claude Sonnet to engage seniors, oversee medication, and enhance social interaction and
+                    health monitoring.
+                </p>
+            </div>
+
+            <div class="achievement__item">
+                <p>
+                    <strong>Second Runner Up</strong> – Protothon 5.0 –
+                    <em>Aspiring Product Managers Club at Northeastern University</em>.
+                    Proposed revenue-boosting & customer retention strategies for BlueBikes, and designed a prototype
+                    using
+                    Figma.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function () {
+            const resume = document.getElementById('resume-content');
+            const opt = {
+                margin: 0.5,
+                filename: 'Atharva_Rotkar_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(resume).save();
+        });
+    </script>
+</body>
+
+</html>
