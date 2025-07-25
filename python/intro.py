@@ -12,7 +12,7 @@ print(4 == "4")
    
 sum=0
 i=0
-# while i<10:
+# while i<10:bfjehrk
 #     if i%2 !=0:
 #         sum += i
 #     i += 1
