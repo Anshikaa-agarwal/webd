@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            color: red;
+        }
+
+        .hide {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="list">
+        <li>Apple</li>
+        <li>banana</li>
+        <li>cat</li>
+    </ul>
+
+    <button class="know-more">Know more</button>
+
+    <input type="text">
+    <input type="text">
+    <input type="text">
+
+    <script>
+        const listItems = document.querySelectorAll('.list li');
+        listItems.forEach((list) => {
+            list.addEventListener('click', () => {
+                listItems.forEach((listtt) => {
+                    listtt.classList.remove('active');
+                })
+                list.classList.toggle('active');
+            })
+        })
+
+        const knowBtn = document.getElementsByClassName('know-more')[0];
+        knowBtn.addEventListener('click', () => {
+            if (knowBtn.classList.contains('hide')) {
+                knowBtn.classList.remove('hide');
+                knowBtn.textContent = "Know more";
+            } else {
+                knowBtn.classList.add('hide');
+                knowBtn.textContent = "Hide";
+            }
+        })
+
+        const inputs = document.querySelectorAll('input');
+
+        inputs.forEach((input) => {
+            // Default: assume input is valid
+            input.setAttribute('data-valid', 'true');
+
+            // Check if input is empty
+            if (input.value.trim() === "") {
+                input.setAttribute('data-valid', 'false');
+                input.style.border = '2px solid red'; // Apply red border
+            }
+        });
+
+    </script>
+</body>
+
+</html>
