@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="counter"></div>
+
+    <script>
+        const div = document.querySelector('.counter');
+        let counter = 0;
+        let increasing = true;
+
+        function updateCounter() {
+            div.textContent = counter;
+            if (increasing) {
+                counter++;
+                if(counter > 10) {
+                    counter=9;
+                    increasing = false;
+                }
+            }
+            else {
+                counter--;
+                if(counter < 0) {
+                    counter = 1;
+                    increasing = true;
+                }
+            }
+        }
+
+        setInterval(updateCounter, 500)
+    </script>
+</body>
+
+</html>
