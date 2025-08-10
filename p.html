@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CSS Position Demo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    height: 1500px; /* to allow scrolling */
+  }
+
+  .box {
+    width: 150px;
+    height: 80px;
+    padding: 10px;
+    margin-bottom: 40px;
+    color: white;
+    font-weight: bold;
+  }
+
+  /* Static - normal flow */
+  .static {
+    position: static; /* default */
+    background-color: #4caf50;
+  }
+
+  /* Relative - moves relative to original */
+  .relative {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    background-color: #2196f3;
+  }
+
+  /* Absolute - positioned relative to nearest positioned ancestor or viewport */
+  .absolute-container {
+    position: relative;
+    background: #ddd;
+    height: 120px;
+    margin-bottom: 40px;
+    border: 2px dashed #999;
+  }
+  .absolute {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #f44336;
+  }
+
+  /* Fixed - stays fixed on viewport */
+  .fixed {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #ff9800;
+    z-index: 1000;
+  }
+
+  /* Sticky - sticks when scrolling reaches */
+  .sticky-container {
+    height: 200px;
+    background: #eee;
+    margin-bottom: 40px;
+  }
+  .sticky {
+    position: sticky;
+    top: 0;
+    background-color: #9c27b0;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+  }
+
+</style>
+</head>
+<body>
+
+<h2>CSS Position Demo</h2>
+
+<div class="box static">Static (default)</div>
+
+<div class="box relative">Relative (moved 20px down & right)</div>
+
+<div class="absolute-container">
+  Absolute container (relative positioned)
+  <div class="box absolute">Absolute (20px top, right)</div>
+</div>
+
+<div class="box fixed">Fixed (top right, stays on scroll)</div>
+
+<div class="sticky-container">
+  <div class="sticky">Sticky (sticks to top when scrolling)</div>
+  <p>Scroll down to see sticky in action...</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor...</p>
+  <p>More content...</p>
+  <p>More content...</p>
+  <p>More content...</p>
+  <p>More content...</p>
+</div>
+
+<script>
+    var a = "hello"
+    console.log(a)
+    a = "new"
+</script>
+
+</body>
+</html>
