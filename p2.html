@@ -593,7 +593,7 @@
     }
 
     .services-section {
-      background: #0d0d0dd9;
+      background: #0d0d0de3;
       color: var(--text);
       padding: 80px 20px;
     }
@@ -725,6 +725,411 @@
         /* always visible on small screens */
       }
     }
+
+    /* ===TESTIMONIALS=== */
+
+    .testimonial {
+      color: var(--text);
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--primary-accent);
+    }
+
+    .testimonial-header p {
+      color: #ccc;
+      max-width: 600px;
+      margin: 0 auto 50px;
+      font-size: 1rem;
+    }
+
+    .testimonial-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: 100px auto;
+    }
+
+    .testimonial-card {
+      background: linear-gradient(135deg,
+          rgba(255, 255, 255, 0.08),
+          rgba(255, 255, 255, 0.02));
+      border-radius: 16px;
+      padding: 30px 20px;
+      backdrop-filter: blur(15px) saturate(180%);
+      -webkit-backdrop-filter: blur(15px) saturate(180%);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .testimonial-card:hover {
+      border: 1px solid var(--primary-accent);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+    }
+
+    .img-div {
+      width: 75px;
+      height: 75px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .img-div img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .client-details h4 {
+      font-size: 1.2rem;
+      margin: 10px 0 5px;
+      color: var(--hover-cta);
+    }
+
+    .client-details span {
+      display: block;
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-bottom: 12px;
+    }
+
+    .client-details p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    /* 📱 Responsive Styles */
+    @media (max-width: 768px) {
+      .testimonial {
+        padding: 60px 15px;
+      }
+
+      .testimonial-header h2 {
+        font-size: 2rem;
+      }
+
+      .testimonial-header p {
+        font-size: 0.95rem;
+        margin-bottom: 40px;
+      }
+
+      .testimonial-card {
+        padding: 25px 18px;
+      }
+
+      .client-details h4 {
+        font-size: 1.1rem;
+      }
+
+      .client-details p {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .testimonial {
+        padding: 50px 10px;
+      }
+
+      .testimonial-header h2 {
+        font-size: 1.6rem;
+      }
+
+      .testimonial-header p {
+        font-size: 0.9rem;
+      }
+
+      .testimonial-card {
+        padding: 20px 15px;
+      }
+
+      .img-div {
+        width: 60px;
+        height: 60px;
+      }
+
+      .client-details h4 {
+        font-size: 1rem;
+      }
+
+      .client-details span {
+        font-size: 0.8rem;
+      }
+
+      .client-details p {
+        font-size: 0.85rem;
+      }
+    }
+
+    .team {
+      padding: 80px 20px;
+      text-align: center;
+      background: #46464649;
+      color: var(--text);
+    }
+
+
+    .team-header p {
+      max-width: 700px;
+      margin: 0 auto 50px;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    /* Grid with 3 top row + 2 bottom row */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      justify-items: center;
+      width: 75%;
+      margin: auto;
+    }
+
+    .team-card {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      border-radius: 16px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-card:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .team-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .team-card:hover::before {
+      opacity: 1;
+    }
+
+    .team-card .overlay {
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: rgba(26, 26, 26, 0.85);
+      backdrop-filter: blur(8px);
+      transition: bottom 0.4s ease;
+    }
+
+    .team-card:hover .overlay {
+      bottom: 0;
+    }
+
+    .team-header h2 {
+      font-size: 2.5rem;
+      color: var(--primary-accent);
+      margin-bottom: 10px;
+    }
+
+    .overlay h3 {
+      font-size: 1.3rem;
+      color: var(--text);
+      /* softer, readable */
+      margin-bottom: 5px;
+    }
+
+    .overlay p {
+      font-size: 1rem;
+      color: var(--hover-cta);
+      /* gentle accent for role/title */
+      margin-bottom: 10px;
+    }
+
+    .overlay .description {
+      font-size: 0.9rem;
+      color: #ccc;
+      /* light, readable for description */
+      line-height: 1.3;
+    }
+
+
+    /* 📱 Mobile responsive */
+    @media (max-width: 992px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Footer Styling */
+    /* Footer */
+    /* ===== Footer Styling ===== */
+    .footer {
+      background-color: #181022;
+      /* subtle dark contrast */
+      color: #dcdcdc;
+      /* slightly brighter than #d9d9d9 for readability */
+      padding: 50px 25px;
+      font-family: 'Arial', sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      /* more breathing space */
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* === Top Section === */
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 25px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo img {
+      height: 50px;
+      width: 100px;
+    }
+
+    .footer-top p {
+      color: rgba(245, 245, 245, 0.75);
+      /* slightly brighter */
+      font-size: 16px;
+    }
+
+    /* === Middle Section === */
+    .footer-middle {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 50px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: var(--text);
+      margin-bottom: 18px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .footer-links.two-cols {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 40px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-col li {
+      margin-bottom: 14px;
+      color: rgba(245, 245, 245, 0.85);
+      font-size: 15px;
+    }
+
+    .footer-col a {
+      color: rgba(245, 245, 245, 0.85);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--hover-cta);
+      /* brand hover */
+    }
+
+    .footer-col b {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .footer-col i {
+      margin-right: 8px;
+      color: var(--primary-accent);
+      /* icons highlight */
+      font-size: 15px;
+    }
+
+    /* === Bottom Section === */
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 14px;
+      color: rgba(245, 245, 245, 0.65);
+    }
+
+    .footer-bottom a {
+      color: rgba(245, 245, 245, 0.75);
+      text-decoration: none;
+      margin-left: 15px;
+      transition: color 0.3s ease;
+      font-size: 14px;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--hover-cta);
+    }
+
+    /* === Mobile Responsiveness === */
+    @media (max-width: 768px) {
+      .footer-top {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-middle {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-links.two-cols {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+
+      .footer-bottom a {
+        margin: 0 10px;
+      }
+    }
   </style>
 </head>
 
@@ -806,16 +1211,21 @@
     <div class="about-us-cards">
       <div class="about-card">
         <h2>Who We Are?</h2>
-        <p> Thinksyde is a <strong>creative-tech agency</strong> founded by passionate freelancers, built to help
-          brands, startups, and businesses grow globally.<br> We’re not just service providers, <strong>we’re partners
+        <p> Thinksyde is a <strong>creative-tech agency</strong> founded by passionate freelancers, built to
+          help
+          brands, startups, and businesses grow globally.<br> We’re not just service providers, <strong>we’re
+            partners
             in your brand’s journey</strong>. </p>
       </div>
       <div class="about-card">
         <h2>Vision & Mission</h2>
-        <p> <strong>Our Vision:</strong> To empower brands with creativity that inspires, connects, and leaves a lasting
+        <p> <strong>Our Vision:</strong> To empower brands with creativity that inspires, connects, and leaves a
+          lasting
           impact in the minds of their audience. </p>
-        <p> <strong>Our Mission:</strong> We aim to transform ideas into powerful brand stories through strategy,
-          creativity, and innovation, working with brands, not just for them, to ensure they are heard, noticed,
+        <p> <strong>Our Mission:</strong> We aim to transform ideas into powerful brand stories through
+          strategy,
+          creativity, and innovation, working with brands, not just for them, to ensure they are heard,
+          noticed,
           remembered, and loved. </p>
       </div>
     </div>
@@ -871,5 +1281,188 @@
       </a>
     </div>
   </section>
+
+  <!-- MEET THE TEAM -->
+  <section class="team">
+    <div class="team-header">
+      <h2>Meet Our Team</h2>
+      <p>We are a group of passionate individuals driven to create meaningful experiences and innovative solutions
+        for our clients.</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card" style="background-image: url(rakshith.jpg);">
+        <div class="overlay">
+          <h3>Rakshith Iyer</h3>
+          <p>Business & Marketing Strategist</p>
+          <p class="description">The brain behind the brand moves.
+            With a sharp eye for opportunities,
+            he blends strategy with creativity to
+            craft marketing plans that don’t just
+            sell, but scale.</p>
+        </div>
+      </div>
+      <div class="team-card" style="background-image: url(workfromhome-bunditinay-AdobeStock_335712831.jpeg);">
+        <div class="overlay">
+          <h3>Snehal Bhatt</h3>
+          <p>Web & Tech Solutions Specialistt</p>
+          <p class="description">From smooth websites to seamless
+            tech, she ensures your brand’s digital
+            side never glitches and make sure your
+            tech backbone is in safe hands.</p>
+        </div>
+      </div>
+      <div class="team-card" style="background-image: url(sakshi.jpg);">
+        <div class="overlay">
+          <h3>Sakshi Mane</h3>
+          <p>Content & Copy Writer</p>
+          <p class="description">Words that click, connect &
+            convert! The wordsmith of
+            Thinksyde, she gives your brand
+            a voice that sticks with your audience</p>
+        </div>
+      </div>
+      <div class="team-card" style="background-image: url(workfromhome-bunditinay-AdobeStock_335712831.jpeg);">
+        <div class="overlay">
+          <h3>Jatin Gumnani</h3>
+          <p>Project Manager</p>
+          <p class="description">The visual storyteller. With design
+            as his language, he gives brands
+            their personality, making every design
+            and campaign stand out and stay
+            memorable.</p>
+        </div>
+      </div>
+      <div class="team-card" style="background-image: url(pranay.jpg);">
+        <div class="overlay">
+          <h3>Pranay Patole</h3>
+          <p>Video Editor/Post Production</p>
+          <p class="description">The storyteller in motion. He turns
+            raw footage into engaging, cinematic
+            brand stories that capture attention
+            in seconds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonial">
+    <div class="testimonial-header">
+      <h2>What People Say</h2>
+      <p>Discover what our satisfied customers have to say about their experiences with our products and services.
+      </p>
+    </div>
+
+    <div class="testimonial-container">
+      <div class="testimonial-card">
+        <div class="img-div">
+          <img
+            src="rakshith.jpg"
+            alt="Sarah Johnson">
+        </div>
+        <div class="client-details">
+          <h4>Sarah Johnson</h4>
+          <span>Small Business Owner</span>
+          <p>Since integrating this solution into our workflow, we've experienced a significant improvement in
+            efficiency and collaboration.</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="img-div">
+          <img
+            src="rakshith.jpg"
+            alt="David Patel">
+        </div>
+        <div class="client-details">
+          <h4>David Patel</h4>
+          <span>Project Manager</span>
+          <p>I've tested numerous options in this category, but one stands out for its intuitive design and
+            comprehensive functionality.</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="img-div">
+          <img
+            src="rakshith.jpg"
+            alt="Emily Carter">
+        </div>
+        <div class="client-details">
+          <h4>Emily Carter</h4>
+          <span>Operations Manager</span>
+          <p>The tool we’ve adopted has surpassed our expectations, providing invaluable insights and support
+            as our business continues to grow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- Top -->
+      <div class="footer-top">
+        <div class="footer-logo">Thinksyde</div>
+        <p>Your brand's partner in growth.</p>
+      </div>
+
+      <!-- Middle -->
+      <div class="footer-middle">
+
+        <!-- Company Links -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <div class="footer-links two-cols">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-links two-cols">
+            <ul>
+              <li><i class="fas fa-map-marker-alt"></i> <b>Spain:</b> Ricardo Calle Oritz, 28017, Madrid</li>
+              <li><i class="fas fa-map-marker-alt"></i> <b>India:</b> Cherish homes, Near Viva College, Virar West,
+                Thane, Maharashtra</li>
+            </ul>
+            <ul>
+              <li><i class="fas fa-phone-alt"></i> <b>Tel:</b> +91 93263 38727</li>
+              <li><i class="fas fa-envelope"></i> <b>Email:</b> thinksyde@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom -->
+      <div class="footer-bottom">
+        <div>© 2024 Your Company. All rights reserved.</div>
+        <div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">EULA</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); }); 
+  </script>
 </body>
+
 </html>
