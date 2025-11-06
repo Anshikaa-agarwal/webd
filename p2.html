@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thinksyde - Partner in Growth</title>
   <script src="https://kit.fontawesome.com/0f5c8d7587.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
   <style>
     /* ===== Root Colors ===== */
     :root {
@@ -32,6 +34,11 @@
       overflow-x: hidden;
       position: relative;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
 
     /* ===== Navbar ===== */
     nav {
@@ -281,8 +288,8 @@
     }
 
     .hero .hero-btn {
-      padding: 0.6rem 1.6rem;
-      font-size: 1rem;
+      padding: 0.8rem 1.8rem;
+      font-size: 1.2rem;
       font-weight: bold;
       border: none;
       border-radius: 30px;
@@ -290,6 +297,7 @@
       color: #fff;
       cursor: pointer;
       transition: transform 0.3s, opacity 0.3s;
+      text-decoration: none;
     }
 
     .hero .hero-btn:hover {
@@ -981,155 +989,264 @@
       }
     }
 
-    /* Footer Styling */
-    /* Footer */
-    /* ===== Footer Styling ===== */
-    .footer {
-      background-color: #181022;
-      /* subtle dark contrast */
-      color: #dcdcdc;
-      /* slightly brighter than #d9d9d9 for readability */
-      padding: 50px 25px;
-      font-family: 'Arial', sans-serif;
-      font-size: 16px;
-      line-height: 1.8;
-      /* more breathing space */
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    /* === Top Section === */
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding-bottom: 25px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .footer-logo img {
-      height: 50px;
-      width: 100px;
-    }
-
-    .footer-top p {
-      color: rgba(245, 245, 245, 0.75);
-      /* slightly brighter */
-      font-size: 16px;
-    }
-
-    /* === Middle Section === */
-    .footer-middle {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 50px;
-      margin-bottom: 40px;
-    }
-
-    .footer-col h4 {
+    /* ===== CONTACT SECTION ===== */
+    .contact-section {
+      position: relative;
+      padding: 80px 20px;
+      background: rgba(25, 25, 25, 0.6);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
       color: var(--text);
-      margin-bottom: 18px;
-      font-size: 17px;
-      font-weight: 600;
+      text-align: center;
+      overflow: hidden;
+      z-index: 1;
     }
 
-    .footer-links.two-cols {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px 40px;
+    .contact-container {
+      max-width: 700px;
+      margin: 0 auto;
     }
 
-    .footer-col ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-col li {
-      margin-bottom: 14px;
-      color: rgba(245, 245, 245, 0.85);
-      font-size: 15px;
-    }
-
-    .footer-col a {
-      color: rgba(245, 245, 245, 0.85);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .footer-col a:hover {
-      color: var(--hover-cta);
-      /* brand hover */
-    }
-
-    .footer-col b {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .footer-col i {
-      margin-right: 8px;
+    .contact-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
       color: var(--primary-accent);
-      /* icons highlight */
-      font-size: 15px;
+      letter-spacing: 1px;
     }
 
-    /* === Bottom Section === */
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 25px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 15px;
-      font-size: 14px;
-      color: rgba(245, 245, 245, 0.65);
+    .contact-section h2 span {
+      color: var(--secondary-accent);
     }
 
-    .footer-bottom a {
-      color: rgba(245, 245, 245, 0.75);
-      text-decoration: none;
-      margin-left: 15px;
-      transition: color 0.3s ease;
-      font-size: 14px;
+    .contact-section p {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 40px;
+      line-height: 1.6;
     }
 
-    .footer-bottom a:hover {
-      color: var(--hover-cta);
+    .form-group {
+      margin-bottom: 20px;
     }
 
-    /* === Mobile Responsiveness === */
+    .contact-section input,
+    .contact-section textarea {
+      width: 100%;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    .contact-section input::placeholder,
+    .contact-section textarea::placeholder {
+      color: rgba(245, 245, 245, 0.6);
+    }
+
+    .contact-section input:focus,
+    .contact-section textarea:focus {
+      box-shadow: 0 0 5px var(--primary-accent);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .contact-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--primary-accent), var(--secondary-accent));
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .contact-btn:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+
+    /* Responsive */
     @media (max-width: 768px) {
-      .footer-top {
-        flex-direction: column;
-        text-align: center;
+      .contact-section h2 {
+        font-size: 2rem;
       }
 
-      .footer-middle {
-        grid-template-columns: 1fr;
-        text-align: center;
+      .contact-section p {
+        font-size: 0.95rem;
       }
 
-      .footer-links.two-cols {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
-      }
-
-      .footer-bottom a {
-        margin: 0 10px;
+      .contact-btn {
+        width: 100%;
       }
     }
+
+
+.footer {
+  background: linear-gradient(135deg, #12091d, #1a102a);
+  color: #e0e0e0;
+  padding: 60px 25px 30px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* === Top Section === */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--hover-cta, #a855f7);
+  letter-spacing: 1px;
+}
+
+.footer-top p {
+  color: rgba(245, 245, 245, 0.7);
+  font-size: 16px;
+  max-width: 300px;
+}
+
+/* === Middle Section === */
+.footer-middle {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  margin-bottom: 40px;
+}
+
+.footer-col h4 {
+  color: var(--text, #ffffff);
+  margin-bottom: 18px;
+  font-size: 17px;
+  font-weight: 600;
+  position: relative;
+}
+
+.footer-col h4::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--hover-cta, #a855f7);
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+.footer-links.two-cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 40px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 12px;
+  color: rgba(240, 240, 240, 0.85);
+  transition: color 0.3s ease;
+}
+
+.footer-col a {
+  color: rgba(240, 240, 240, 0.85);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-col a:hover {
+  color: var(--hover-cta, #a855f7);
+}
+
+.footer-col b {
+  color: var(--text, #ffffff);
+  font-weight: 500;
+}
+
+.footer-col i {
+  margin-right: 8px;
+  color: var(--hover-cta, #a855f7);
+  font-size: 14px;
+}
+
+/* === Bottom Section === */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 14px;
+  color: rgba(245, 245, 245, 0.6);
+}
+
+.footer-bottom a {
+  color: rgba(245, 245, 245, 0.7);
+  text-decoration: none;
+  margin-left: 15px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: var(--hover-cta, #a855f7);
+}
+
+/* === Mobile Responsiveness === */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-middle {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-links.two-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-col h4::after {
+    margin: 8px auto 0;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-bottom a {
+    margin: 0 10px;
+  }
+}
   </style>
 </head>
 
@@ -1157,11 +1274,12 @@
   <nav>
     <div class="logo">Thinksyde</div>
     <div class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
       <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
+      <a href="#team">Team</a>
       <a href="#contact">Contact</a>
-      <button class="cta-btn">Join Us</button>
+
     </div>
     <div class="hamburger" id="hamburger">
       <div></div>
@@ -1175,7 +1293,7 @@
     <h1><span>Thinksyde</span> isn’t just another agency.</h1>
     <h2>We are your brand’s Partner-In-Growth.</h2>
     <p>Want your brand to be Heard, Remembered & Loved? Let’s connect and make it happen.</p>
-    <button class="hero-btn">Get in Touch</button>
+    <a class="hero-btn" href="#contact" >Get in Touch</a>
   </section>
 
   <!-- Why Us -->
@@ -1205,7 +1323,7 @@
   </section>
 
   <!-- Who We Are / Vision & Mission -->
-  <section class="about-us-glass">
+  <section id="about" class="about-us-glass">
     <div class="circle-left"></div>
     <div class="circle-right"></div>
     <div class="about-us-cards">
@@ -1232,7 +1350,7 @@
   </section>
 
   <!-- Services Section -->
-  <section class="services-section">
+  <section id="services" class="services-section">
     <div class="services-header">
       <h4>Our Service</h4>
       <h2>What <span>Services</span><br>We’re Offering</h2>
@@ -1283,7 +1401,7 @@
   </section>
 
   <!-- MEET THE TEAM -->
-  <section class="team">
+  <section id="team" class="team">
     <div class="team-header">
       <h2>Meet Our Team</h2>
       <p>We are a group of passionate individuals driven to create meaningful experiences and innovative solutions
@@ -1302,7 +1420,7 @@
             sell, but scale.</p>
         </div>
       </div>
-      <div class="team-card" style="background-image: url(workfromhome-bunditinay-AdobeStock_335712831.jpeg);">
+      <div class="team-card" style="background-image: url(snehal.jpg);">
         <div class="overlay">
           <h3>Snehal Bhatt</h3>
           <p>Web & Tech Solutions Specialistt</p>
@@ -1322,7 +1440,7 @@
             a voice that sticks with your audience</p>
         </div>
       </div>
-      <div class="team-card" style="background-image: url(workfromhome-bunditinay-AdobeStock_335712831.jpeg);">
+      <div class="team-card" style="background-image: url(_MG_5533.jpg);">
         <div class="overlay">
           <h3>Jatin Gumnani</h3>
           <p>Project Manager</p>
@@ -1346,6 +1464,28 @@
     </div>
   </section>
 
+  <!-- CONTACT FORM -->
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <p>We’d love to hear from you! Whether it’s a question, feedback, or collaboration idea — drop us a message below.
+      </p>
+
+      <form id="contact-form" method="post">
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="contact-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
   <!-- TESTIMONIALS -->
   <section class="testimonial">
     <div class="testimonial-header">
@@ -1357,9 +1497,7 @@
     <div class="testimonial-container">
       <div class="testimonial-card">
         <div class="img-div">
-          <img
-            src="rakshith.jpg"
-            alt="Sarah Johnson">
+          <img src="rakshith.jpg" alt="Sarah Johnson">
         </div>
         <div class="client-details">
           <h4>Sarah Johnson</h4>
@@ -1371,9 +1509,7 @@
 
       <div class="testimonial-card">
         <div class="img-div">
-          <img
-            src="rakshith.jpg"
-            alt="David Patel">
+          <img src="rakshith.jpg" alt="David Patel">
         </div>
         <div class="client-details">
           <h4>David Patel</h4>
@@ -1385,9 +1521,7 @@
 
       <div class="testimonial-card">
         <div class="img-div">
-          <img
-            src="rakshith.jpg"
-            alt="Emily Carter">
+          <img src="rakshith.jpg" alt="Emily Carter">
         </div>
         <div class="client-details">
           <h4>Emily Carter</h4>
@@ -1399,69 +1533,95 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-container">
+<!-- ===== FOOTER ===== -->
+<footer class="footer" id="footer">
+  <div class="footer-container">
 
-      <!-- Top -->
-      <div class="footer-top">
-        <div class="footer-logo">Thinksyde</div>
-        <p>Your brand's partner in growth.</p>
-      </div>
+    <!-- Top -->
+    <div class="footer-top">
+      <div class="footer-logo">Thinksyde</div>
+      <p>Your brand’s partner in growth and innovation.</p>
+    </div>
 
-      <!-- Middle -->
-      <div class="footer-middle">
+    <!-- Middle -->
+    <div class="footer-middle">
 
-        <!-- Company Links -->
-        <div class="footer-col">
-          <h4>Company</h4>
-          <div class="footer-links two-cols">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Services</a></li>
-            </ul>
-            <ul>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="footer-col">
-          <h4>Contact Us</h4>
-          <div class="footer-links two-cols">
-            <ul>
-              <li><i class="fas fa-map-marker-alt"></i> <b>Spain:</b> Ricardo Calle Oritz, 28017, Madrid</li>
-              <li><i class="fas fa-map-marker-alt"></i> <b>India:</b> Cherish homes, Near Viva College, Virar West,
-                Thane, Maharashtra</li>
-            </ul>
-            <ul>
-              <li><i class="fas fa-phone-alt"></i> <b>Tel:</b> +91 93263 38727</li>
-              <li><i class="fas fa-envelope"></i> <b>Email:</b> thinksyde@gmail.com</li>
-            </ul>
-          </div>
+      <!-- Company Links -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <div class="footer-links two-cols">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#services">Services</a></li>
+          </ul>
+          <ul>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
         </div>
       </div>
 
-      <!-- Bottom -->
-      <div class="footer-bottom">
-        <div>© 2024 Your Company. All rights reserved.</div>
-        <div>
-          <a href="#">Privacy Policy</a>
-          <a href="#">EULA</a>
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-links two-cols">
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> <b>Spain:</b> Ricardo Calle Oritz, 28017, Madrid</li>
+            <li><i class="fas fa-map-marker-alt"></i> <b>India:</b> Cherish Homes, Near Viva College, Virar West,
+              Thane, Maharashtra</li>
+          </ul>
+          <ul>
+            <li><i class="fas fa-phone-alt"></i> <b>Tel:</b> +91 93263 38727</li>
+            <li><i class="fas fa-envelope"></i> <b>Email:</b> thinksyde@gmail.com</li>
+          </ul>
         </div>
       </div>
 
     </div>
-  </footer>
+
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <div>© 2025 Thinksyde. All rights reserved.</div>
+      <div>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
 
   <!-- JS -->
   <script>
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); }); 
+    hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+
+
+    (function () {
+      emailjs.init("QGBt95zbkah0I-dOE"); // your public key
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      emailjs.send("service_fqaj4eb", "template_e6gha9h", {
+        from_name: document.getElementById("name").value,
+        reply_to: document.getElementById("email").value,
+        message: document.getElementById("message").value
+      })
+        .then(() => {
+          alert("Message sent successfully!");
+          document.getElementById("contact-form").reset();
+        })
+        .catch((error) => {
+          alert("Failed to send message. Please try again later.");
+          console.error("EmailJS error:", error);
+        });
+    });
   </script>
 </body>
 
