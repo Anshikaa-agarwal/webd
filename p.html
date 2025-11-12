@@ -1,111 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CSS Position Demo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freelance Team - Navbar Responsive</title>
 <style>
+  :root {
+    --bg-primary: #0e0b1f;
+    --bg-glass: rgba(255,255,255,0.05);
+    --text-primary: #e6e0ff;
+    --text-muted: #a39bcf;
+    --accent-purple: #a259ff;
+    --accent-lavender: #c78fff;
+    --accent-pink: #ff8de3;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
   body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    height: 1500px; /* to allow scrolling */
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
   }
 
-  .box {
-    width: 150px;
-    height: 80px;
-    padding: 10px;
-    margin-bottom: 40px;
-    color: white;
-    font-weight: bold;
-  }
-
-  /* Static - normal flow */
-  .static {
-    position: static; /* default */
-    background-color: #4caf50;
-  }
-
-  /* Relative - moves relative to original */
-  .relative {
-    position: relative;
-    top: 20px;
-    left: 20px;
-    background-color: #2196f3;
-  }
-
-  /* Absolute - positioned relative to nearest positioned ancestor or viewport */
-  .absolute-container {
-    position: relative;
-    background: #ddd;
-    height: 120px;
-    margin-bottom: 40px;
-    border: 2px dashed #999;
-  }
-  .absolute {
+  /* Blurred circles background */
+  .blur-circle {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #f44336;
+    border-radius: 50%;
+    filter: blur(200px);
+    opacity: 0.3;
+    z-index: 0;
   }
+  .circle1 { width:400px;height:400px;background:#a259ff;top:-100px;left:-100px; }
+  .circle2 { width:500px;height:500px;background:#c78fff;top:200px;right:-150px; }
+  .circle3 { width:300px;height:300px;background:#ff8de3;bottom:-100px;left:50%;transform:translateX(-50%); }
 
-  /* Fixed - stays fixed on viewport */
-  .fixed {
+  /* Navbar */
+  nav {
     position: fixed;
-    top: 10px;
-    right: 10px;
-    background-color: #ff9800;
-    z-index: 1000;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+    backdrop-filter: blur(15px);
+    background: var(--bg-glass);
+    border-radius: 15px;
+    z-index: 10;
+    flex-wrap: wrap; /* allows wrapping on small screens */
+    gap: 1rem;
   }
 
-  /* Sticky - sticks when scrolling reaches */
-  .sticky-container {
-    height: 200px;
-    background: #eee;
-    margin-bottom: 40px;
-  }
-  .sticky {
-    position: sticky;
-    top: 0;
-    background-color: #9c27b0;
-    padding: 10px;
-    color: white;
+  .logo {
+    font-size: 1.5rem;
     font-weight: bold;
+    color: var(--accent-purple);
   }
 
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap; /* wrap links on smaller screens */
+  }
+
+  .nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: var(--accent-lavender);
+  }
+
+  .cta-button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--accent-pink);
+    color: var(--bg-primary);
+    transition: 0.3s;
+  }
+
+  .cta-button:hover {
+    background-color: var(--accent-lavender);
+  }
+
+  /* Responsive: stack links on very small screens */
+  @media (max-width: 600px) {
+    nav {
+      justify-content: center;
+    }
+
+    .nav-links {
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .cta-button {
+      width: auto;
+    }
+  }
 </style>
 </head>
 <body>
 
-<h2>CSS Position Demo</h2>
+<!-- Blurred background circles -->
+<div class="blur-circle circle1"></div>
+<div class="blur-circle circle2"></div>
+<div class="blur-circle circle3"></div>
 
-<div class="box static">Static (default)</div>
-
-<div class="box relative">Relative (moved 20px down & right)</div>
-
-<div class="absolute-container">
-  Absolute container (relative positioned)
-  <div class="box absolute">Absolute (20px top, right)</div>
-</div>
-
-<div class="box fixed">Fixed (top right, stays on scroll)</div>
-
-<div class="sticky-container">
-  <div class="sticky">Sticky (sticks to top when scrolling)</div>
-  <p>Scroll down to see sticky in action...</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor...</p>
-  <p>More content...</p>
-  <p>More content...</p>
-  <p>More content...</p>
-  <p>More content...</p>
-</div>
-
-<script>
-    var a = "hello"
-    console.log(a)
-    a = "new"
-</script>
+<!-- Navbar -->
+<nav>
+  <div class="logo">FreelanceTeam</div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <button class="cta-button">Hire Us</button>
+  </div>
+</nav>
 
 </body>
 </html>
